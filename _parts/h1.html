@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Isaac FULAMA — Développeur & Futur Architecte Logiciel</title>
+  <meta name="description" content="Portfolio d'Isaac FULAMA, développeur et futur architecte logiciel. Projets, compétences et contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav__logo">
+      <span class="nav__logo-mark">IF</span>
+      <span class="nav__logo-text">Isaac&nbsp;FULAMA</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#about">À propos</a>
+      <a href="#skills">Compétences</a>
+      <a href="#projects">Projets</a>
+      <a href="#contact" class="nav__cta">Me contacter</a>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal">
+          <span class="dot"></span> Disponible pour de nouveaux projets
+        </p>
+        <h1 class="hero__title reveal">
+          Salut, moi c'est <span class="accent">Isaac FULAMA</span>
+        </h1>
+        <h2 class="hero__subtitle reveal">
+          <span id="typed"></span><span class="cursor">|</span>
+        </h2>
+        <p class="hero__desc reveal">
+          Je conçois et développe des applications web claires et performantes.
+          Passionné d'architecture logicielle, je cherche à construire des systèmes solides,
+          évolutifs et pensés pour durer.
+        </p>
+        <div class="hero__actions reveal">
+          <a href="#projects" class="btn btn--primary">Voir mes projets</a>
+          <a href="#contact" class="btn btn--ghost">Me contacter</a>
+        </div>
+      </div>
+
+      <!--
+        Photos d'illustration (banque d'images Unsplash, libres de droits).
+        Pour mettre VOTRE visage : remplacez img/dev1.jpg par votre photo (même nom de fichier).
+      -->
+      <div class="hero__visual reveal">
+        <div class="photo-stage">
+          <figure class="photo photo--main">
+            <img src="img/dev1.jpg" alt="Développeur souriant devant son ordinateur portable" />
+          </figure>
+          <span class="wave-hand" aria-hidden="true">👋</span>
+
+          <figure class="photo photo--small">
+            <img src="img/dev4.jpg" alt="Développeuse en train de coder sur son ordinateur" />
+          </figure>
+
+          <div class="code-card" aria-hidden="true">
+            <span class="code-card__dots"><i></i><i></i><i></i></span>
+            <code><b>const</b> dev = <b>"Isaac"</b>;</code>
+            <code>build(dev, <b>"solide"</b>);</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section class="section" id="about">
+      <div class="section__head reveal">
+        <span class="section__kicker">01 — À propos</span>
+        <h2 class="section__title">Un développeur <span class="accent">tourné vers l'architecture</span></h2>
+      </div>
+
+      <div class="about reveal">
+        <p class="about__lead">
+          J'aime le code bien structuré, les API réfléchies et les interfaces fluides.
+        </p>
+        <p class="about__text">
+          Mon objectif : devenir architecte logiciel et bâtir des systèmes robustes,
+          sécurisés et capables de grandir avec les besoins.
+        </p>
+        <ul class="about__points">
+          <li>Code propre et lisible</li>
+          <li>Conception d'API</li>
+          <li>Interfaces responsives</li>
+          <li>Apprentissage continu</li>
+        </ul>
+      </div>
+    </section>
+

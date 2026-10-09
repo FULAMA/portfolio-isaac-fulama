@@ -1,0 +1,79 @@
+[
+  {
+    "id": "edunova",
+    "slug": "edunova",
+    "title": "EduNova",
+    "subtitle": "SaaS B2B & ERP Scolaire Multi-Établissements",
+    "category": "SaaS B2B / Moteur Backend & Mobile",
+    "featured": true,
+    "description": "Plateforme SaaS ERP d'administration scolaire multi-établissements développée avec FastAPI et PostgreSQL. Conçue pour centraliser la scolarité, la comptabilité, le pointage des présences et la collecte sécurisée des frais d'études via les API Mobile Money.",
+    "longDescription": "EduNova est le projet d'architecture phare pensé pour répondre aux contraintes spécifiques de connectivité et de paiements dématérialisés en Afrique subsaharienne. Il intègre une séparation stricte des responsabilités (Clean Architecture), un système RBAC haute granularité et un moteur de synchronisation résilient.",
+    "technologies": ["Python", "FastAPI", "PostgreSQL", "Mobile Money", "Android", "Clean Architecture", "Docker"],
+    "status": {
+      "phase": "Conçu & En Pilote",
+      "label": "Spécifications & Architecture Clean validées. Phase pilote prochaine."
+    },
+    "links": {
+      "demo": null,
+      "github": "https://github.com/isaacfulama/edunova-core"
+    }
+  },
+  {
+    "id": "loyers-eglise",
+    "slug": "loyers-eglise",
+    "title": "Gestion de Paiement des Loyers d'Église",
+    "subtitle": "Système d'Administration & Suivi Financier",
+    "category": "Application Desktop & Reporting",
+    "featured": false,
+    "description": "Application desktop autonome d'administration et de gestion comptable des baux et loyers paroissiaux. Génération automatique des reçus, historiques des transactions et états financiers récapitulatifs.",
+    "longDescription": "Conçue pour garantir une traçabilité sans faille des rentrées financières locales, avec stockage local SQLite sécurisé et interface utilisateur épurée basée sur CustomTkinter.",
+    "technologies": ["Python", "CustomTkinter", "SQLite", "ReportLab", "GitHub Releases"],
+    "status": {
+      "phase": "Déployé",
+      "label": "Téléchargeable et maintenu via GitHub Releases"
+    },
+    "links": {
+      "demo": null,
+      "github": "https://github.com/isaacfulama/loyers-eglise-desktop"
+    }
+  },
+  {
+    "id": "asset-management-odr",
+    "slug": "asset-management-odr",
+    "title": "Asset Management — Office de la Route",
+    "subtitle": "Gestion Mobile de Parc Informatique & Équipements",
+    "category": "Mobile Enterprise & Offline-First",
+    "featured": false,
+    "description": "Application mobile d'inventaire, de suivi et de gestion du matériel informatique et des équipements techniques de l'Office de la Route. Conçue avec architecture réactive et persistence locale.",
+    "longDescription": "Architecture hors-ligne (Offline-First) s'appuyant sur Drift (SQLite) et le pattern BLoC pour assurer un fonctionnement fluide sur le terrain même sans couverture réseau.",
+    "technologies": ["Flutter", "Dart", "Drift", "SQLite", "Clean Architecture", "BLoC"],
+    "status": {
+      "phase": "Livré",
+      "label": "Version opérationnelle pour inventaire terrain"
+    },
+    "links": {
+      "demo": null,
+      "github": "https://github.com/isaacfulama/asset-management-odr"
+    }
+  },
+  {
+    "id": "alertemaville",
+    "slug": "alertemaville",
+    "title": "AlerteMaVille",
+    "subtitle": "CivicTech & Signalement d'Incidents Urbains",
+    "category": "Mobile CivicTech & Cloud",
+    "featured": false,
+    "description": "Plateforme mobile CivicTech permettant aux citoyens de signaler les incidents urbains (voirie, assainissement, sécurité) en temps réel avec géolocalisation et suivi d'intervention.",
+    "longDescription": "Solution mobile hautement réactive intégrant Firebase Firestore pour la synchronisation temps réel des alertes et les notifications Push instantanées destinées aux services techniques.",
+    "technologies": ["Flutter", "Dart", "Firebase", "BLoC", "Google Maps API"],
+    "status": {
+      "phase": "Prototype Fonctionnel",
+      "label": "Code-base modulable & démonstrateur d'architecture"
+    },
+    "links": {
+      "demo": null,
+      "github": "https://github.com/isaacfulama/alertemaville-app"
+    }
+  }
+]
+

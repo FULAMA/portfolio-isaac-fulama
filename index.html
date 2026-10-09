@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio 3D Low-Poly & Gestionnaire de Projets</title>
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- En-tête / Barre de Navigation -->
+    <header class="navbar">
+      <div class="nav-brand">
+        <div class="logo-icon">
+          <i data-lucide="box"></i>
+        </div>
+        <div class="logo-text">
+          <span class="title">DEV-STUDIO <span class="badge-3d">3D</span></span>
+          <span class="subtitle">Informaticien Low-Poly & Workspace</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#hero-3d" class="nav-link active"><i data-lucide="cpu"></i> Personnage 3D</a>
+        <a href="#projects-section" class="nav-link"><i data-lucide="folder-kanban"></i> Mes Projets (<span id="project-count-badge">0</span>)</a>
+        <a href="#db-section" class="nav-link"><i data-lucide="database"></i> Base de Données</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="btn-sound-toggle" class="btn btn-secondary btn-icon" title="Activer/Désactiver le son de frappe">
+          <i data-lucide="volume-2"></i>
+        </button>
+        <button id="btn-open-upload" class="btn btn-primary">
+          <i data-lucide="plus-circle"></i> Nouveau Projet
+        </button>
+      </div>
+    </header>
+
+    <!-- Conteneur Principal -->
+    <main class="main-container">
+      
+      <!-- Section 1 : Scène 3D Interactive du Personnage Low-Poly -->
+      <section id="hero-3d" class="hero-3d-section">
+        <div class="canvas-wrapper">
+          <canvas id="scene"></canvas>
+          
+          <!-- Overlay HUD sur le canvas 3D -->
+          <div class="hud-overlay">
+            <div class="hud-card hud-status">
+              <span class="status-dot"></span>
+              <div class="hud-info">
+                <strong>INFORMATICIEN LOW-POLY</strong>
+                <small id="hud-mode-text">Hoodie sombre • Contrôle d'os actif (head & neck joint)</small>
+              </div>
+            </div>
+
+            <div class="hud-controls-bar">
+              <div class="cam-preset-group">
+                <button class="cam-btn active" data-cam="default"><i data-lucide="eye"></i> Vue Globale</button>
+                <button class="cam-btn" data-cam="head"><i data-lucide="user"></i> Focus Tête</button>
+                <button class="cam-btn" data-cam="desk"><i data-lucide="laptop"></i> Focus Laptop</button>
+              </div>
+              <div class="hud-stats">
+                <span class="stat-tag"><i data-lucide="activity"></i> <span id="fps-counter">60</span> FPS</span>
+                <span class="stat-tag"><i data-lucide="mouse-pointer-2"></i> Dampening Smooth</span>
+              </div>
+            </div>
+
+            <div class="hud-hint">
+              <i data-lucide="move"></i> Déplacez votre curseur sur l'écran pour orienter la tête et le regard du développeur.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2 : Espace Projets & Base de Données -->
+      <section id="projects-section" class="projects-section">
+        <div class="section-header">
+          <div>
+            <span class="kicker"><i data-lucide="layers"></i> PORTFOLIO & DATABASE</span>
+            <h2 class="section-title">Espace Projets Personnel</h2>
+            <p class="section-desc">Gérez vos projets stockés localement dans la base de données IndexedDB. Ajoutez, modifiez et téléchargez vos créations.</p>
+          </div>
+          <button id="btn-add-project-banner" class="btn btn-primary">
+            <i data-lucide="upload-cloud"></i> Uploader un projet
+          </button>
+        </div>
+
+        <!-- Barre de recherche et Filtres -->
+        <div class="filter-toolbar">
+          <div class="search-box">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" id="search-input" placeholder="Rechercher un projet, un tag ou un mot-clé..." />
+            <button id="clear-search" class="btn-clear" style="display:none;"><i data-lucide="x"></i></button>
+          </div>
+
+          <div class="category-pills" id="category-pills">
+            <button class="pill active" data-cat="all">Tous</button>
+            <button class="pill" data-cat="3d">3D & WebGL</button>
+            <button class="pill" data-cat="web">Applications Web</button>
+            <button class="pill" data-cat="mobile">Mobile & App</button>
+            <button class="pill" data-cat="ai">IA & Data</button>
+          </div>
+
+          <div class="sort-select">
+            <label for="sort-by"><i data-lucide="arrow-down-up"></i> Tri :</label>
+            <select id="sort-by">
+              <option value="newest">Plus récents</option>
+              <option value="oldest">Plus anciens</option>
+              <option value="name">Nom (A-Z)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Grille de Projets -->
+        <div id="projects-grid" class="projects-grid">
+          <!-- Les cartes de projet seront générées dynamiquement par JS -->
+        </div>
+
+        <!-- Etat Vide (No projects match filter) -->
+        <div id="empty-state" class="empty-state" style="display: none;">
+          <div class="empty-icon"><i data-lucide="folder-open"></i></div>
+          <h3>Aucun projet trouvé</h3>
+          <p>Aucun projet ne correspond à vos critères de recherche. Ajoutez votre premier projet !</p>
+          <button id="btn-empty-add" class="btn btn-primary"><i data-lucide="plus"></i> Créer un projet</button>
+        </div>
+      </section>
+
+      <!-- Section 3 : Base de données & Statistiques -->
+      <section id="db-section" class="db-section">
+        <div class="db-card">
+          <div class="db-header">
+            <div class="db-title-group">
+              <div class="db-icon"><i data-lucide="hard-drive"></i></div>
+              <div>
+                <h3>Gestionnaire de Base de Données IndexedDB</h3>
+                <p>Vos projets sont sauvegardés en toute sécurité directement dans le stockage local de votre navigateur.</p>
+              </div>
+            </div>
+            <div class="db-actions">
+              <button id="btn-export-db" class="btn btn-secondary"><i data-lucide="download"></i> Exporter JSON</button>
+              <button id="btn-import-db" class="btn btn-secondary"><i data-lucide="upload"></i> Importer JSON</button>
+              <input type="file" id="input-import-file" accept=".json" style="display: none;" />
+              <button id="btn-reset-db" class="btn btn-danger-outline" title="Réinitialiser avec données démo"><i data-lucide="rotate-ccw"></i> Reset Démo</button>
+            </div>
+          </div>
+
+          <div class="db-stats-grid">
+            <div class="db-stat-item">
+              <span class="db-stat-label">Projets Enregistrés</span>
+              <span class="db-stat-value" id="db-count-val">0</span>
+            </div>
+            <div class="db-stat-item">
+              <span class="db-stat-label">Taille Estimée</span>
+              <span class="db-stat-value" id="db-size-val">0 KB</span>
+            </div>
+            <div class="db-stat-item">
+              <span class="db-stat-label">Moteur de Stockage</span>
+              <span class="db-stat-value">IndexedDB v1.0</span>
+            </div>
+            <div class="db-stat-item">
+              <span class="db-stat-label">Statut Connexion</span>
+              <span class="db-stat-value status-online"><i data-lucide="check-circle-2"></i> Opérationnel</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>© <span id="year"></span> Studio 3D Low-Poly & Portfolio Workspace. Rendu avec Three.js & IndexedDB.</p>
+      </div>
+    </footer>
+
+    <!-- MODAL 1 : Uploader / Ajouter un Projet -->
+    <div id="modal-upload" class="modal-overlay" style="display: none;">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3 class="modal-title" id="modal-form-title"><i data-lucide="upload-cloud"></i> Ajouter un Nouveau Projet</h3>
+          <button class="modal-close" id="btn-close-upload"><i data-lucide="x"></i></button>
+        </div>
+
+        <form id="project-form" class="project-form">
+          <input type="hidden" id="form-project-id" value="" />
+
+          <div class="form-grid">
+            <div class="form-group col-span-2">
+              <label for="proj-title">Titre du Projet <span class="required">*</span></label>
+              <input type="text" id="proj-title" placeholder="Ex: Simulateur Physique Three.js" required />
+            </div>
+
+            <div class="form-group">
+              <label for="proj-category">Catégorie <span class="required">*</span></label>
+              <select id="proj-category" required>
+                <option value="3d">3D & WebGL</option>
+                <option value="web">Applications Web</option>
+                <option value="mobile">Mobile & App</option>
+                <option value="ai">IA & Data</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="proj-tags">Technologies / Tags (séparés par des virgules)</label>
+              <input type="text" id="proj-tags" placeholder="Ex: Three.js, WebGL, JavaScript, CSS3" />
+            </div>
+
+            <div class="form-group col-span-2">
+              <label for="proj-desc">Description du Projet <span class="required">*</span></label>
+              <textarea id="proj-desc" rows="3" placeholder="Décrivez les fonctionnalités clés, objectifs ou architecture de votre projet..." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="proj-demo">Lien Démo (optionnel)</label>
+              <input type="url" id="proj-demo" placeholder="https://votre-demo.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="proj-github">Lien GitHub (optionnel)</label>
+              <input type="url" id="proj-github" placeholder="https://github.com/votre-user/repo" />
+            </div>
+
+            <div class="form-group col-span-2">
+              <label>Image de Couverture / Capture d'écran</label>
+              <div class="dropzone" id="dropzone">
+                <input type="file" id="proj-image-input" accept="image/*" style="display: none;" />
+                <div class="dropzone-content" id="dropzone-prompt">
+                  <i data-lucide="image-plus" class="dropzone-icon"></i>
+                  <p><strong>Cliquez ou glissez une image ici</strong></p>
+                  <small>Formats acceptés : PNG, JPG, WebP, SVG (Max 5Mo)</small>
+                </div>
+                <div class="image-preview-container" id="image-preview-wrapper" style="display: none;">
+                  <img id="image-preview" src="" alt="Aperçu" />
+                  <button type="button" id="btn-remove-image" class="btn-remove-img" title="Supprimer l'image"><i data-lucide="trash-2"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="btn-cancel-upload">Annuler</button>
+            <button type="submit" class="btn btn-primary" id="btn-save-project">
+              <i data-lucide="save"></i> Enregistrer le Projet
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MODAL 2 : Détails d'un Projet -->
+    <div id="modal-details" class="modal-overlay" style="display: none;">
+      <div class="modal-card modal-card-lg">
+        <div class="modal-header">
+          <h3 class="modal-title" id="detail-title">Détails du Projet</h3>
+          <button class="modal-close" id="btn-close-details"><i data-lucide="x"></i></button>
+        </div>
+        <div class="modal-body-details">
+          <div class="detail-cover-wrapper">
+            <img id="detail-image" src="" alt="Couverture" />
+            <span class="detail-category-badge" id="detail-category">Catégorie</span>
+          </div>
+          <div class="detail-content">
+            <div class="detail-meta">
+              <span id="detail-date"><i data-lucide="calendar"></i> 01/01/2026</span>
+            </div>
+            <p id="detail-description" class="detail-desc-text"></p>
+            <div class="detail-tags-container" id="detail-tags"></div>
+
+            <div class="detail-links">
+              <a id="detail-demo-link" href="#" target="_blank" class="btn btn-primary" style="display: none;">
+                <i data-lucide="external-link"></i> Voir la Démo
+              </a>
+              <a id="detail-github-link" href="#" target="_blank" class="btn btn-secondary" style="display: none;">
+                <i data-lucide="github"></i> Code Source
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Système de Toasts / Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Importmap Three.js -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.170.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.170.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

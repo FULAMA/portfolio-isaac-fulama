@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 9 9 11;
+    --foreground: 237 237 237;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #09090B;
+    color: #EDEDED;
+  }
+
+  body {
+    background-color: #09090B;
+    color: #EDEDED;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #27272A;
+    color: #EDEDED;
+  }
+}
+
+/* Custom Scrollbar Swiss Style */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #09090B;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
