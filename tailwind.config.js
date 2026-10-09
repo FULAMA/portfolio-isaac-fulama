@@ -9,29 +9,30 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#09090B',
+        background: '#0b0c10',
         surface: {
-          DEFAULT: '#141416',
-          hover: '#1a1a1d',
-          card: '#121214',
+          DEFAULT: '#12141c',
+          card: '#161924',
+          accent: '#1c1f2e',
+        },
+        gold: {
+          DEFAULT: '#c5a059',
+          light: '#e2c27b',
+          muted: 'rgba(197, 160, 89, 0.25)',
         },
         border: {
-          DEFAULT: '#27272A',
-          subtle: '#1f1f22',
+          DEFAULT: 'rgba(197, 160, 89, 0.2)',
+          subtle: '#1f2230',
         },
-        foreground: '#EDEDED',
-        muted: '#A1A1AA',
+        foreground: '#f4f1ea',
+        muted: '#9ca3af',
       },
       fontFamily: {
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
-      },
-      letterSpacing: {
-        tightest: '-0.035em',
-        editorial: '-0.02em',
       },
     },
   },
   plugins: [],
 };
-

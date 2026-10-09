@@ -3,8 +3,8 @@ import './globals.css';
 import Header from '@/components/Header';
 
 export const metadata: Metadata = {
-  title: 'Ir. Isaac FULAMA MATONDO | Architecte Logiciel & Full-Stack',
-  description: "Portfolio professionnel d'Ir. Isaac FULAMA MATONDO, Architecte Logiciel & Ingénieur Informaticien. Spécialiste Clean Architecture & SaaS B2B.",
+  title: 'Ir. Isaac FULAMA MATONDO | Architecte Logiciel & Ingénieur Informaticien',
+  description: "Portfolio de référence de Ir. Isaac FULAMA MATONDO, Architecte Logiciel et Ingénieur Informaticien. Spécialiste Clean Architecture & SaaS B2B.",
   keywords: ['Architecture Logicielle', 'Clean Architecture', 'DDD', 'FastAPI', 'Flutter', 'SaaS B2B', 'Kinshasa', 'RDC'],
   authors: [{ name: 'Ir. Isaac FULAMA MATONDO' }],
   openGraph: {
@@ -28,15 +28,14 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#09090B] text-[#EDEDED] antialiased selection:bg-[#27272A] selection:text-[#EDEDED]">
+      <body className="bg-[#0b0c10] text-[#f4f1ea] antialiased selection:bg-[#c5a059]/30 selection:text-[#ffffff]">
         <Header />
         {children}
       </body>
     </html>
   );
 }
-

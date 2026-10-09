@@ -22,9 +22,7 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Verification du Honeypot anti-spam
     if (formData.website) {
-      // Un robot a rempli le champ caché
       setStatus('success');
       return;
     }
@@ -60,14 +58,16 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-20 border-b border-[#27272A] bg-[#09090B]">
+    <section id="contact" className="py-24 border-b border-[#c5a059]/20 bg-[#0b0c10]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="mb-12">
-          <div className="font-mono text-xs text-[#A1A1AA] uppercase tracking-wider mb-2">04 // PRISE DE CONTACT DIRECTE</div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#EDEDED] tracking-tight">
-            Me Contacter & Canaux Directs
+        <div className="mb-14">
+          <div className="font-mono text-xs text-[#c5a059] uppercase tracking-widest mb-2 font-semibold">
+            V // PRISE DE CONTACT & CORRESPONDANCE
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#f4f1ea] tracking-tight">
+            Canaux Directs & Correspondance
           </h2>
         </div>
 
@@ -75,44 +75,44 @@ export default function ContactForm() {
           
           {/* Direct Channels Column */}
           <div className="lg:col-span-5 space-y-6">
-            <p className="text-sm text-[#A1A1AA] leading-relaxed">
+            <p className="text-base text-[#9ca3af] leading-relaxed">
               Pour toute opportunité d'architecture système, de mission de conseil en ingénierie logicielle ou d'intégration SaaS B2B, vous pouvez me joindre directement via les coordonnées ci-dessous :
             </p>
 
             <div className="space-y-4 font-mono text-xs">
               
-              <div className="p-4 rounded bg-[#141416] border border-[#27272A] flex items-center gap-3">
-                <div className="p-2 rounded bg-[#09090B] border border-[#27272A] text-[#EDEDED]">
-                  <Mail className="w-4 h-4" />
+              <div className="p-5 rounded-sm bg-[#12141c] border border-[#c5a059]/30 flex items-center gap-4">
+                <div className="p-3 rounded-sm bg-[#0b0c10] border border-[#c5a059]/40 text-[#c5a059]">
+                  <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[#A1A1AA] text-[10px] uppercase">EMAIL PRINCIPAL</div>
-                  <a href="mailto:fulamaantoine@gmail.com" className="text-[#EDEDED] hover:underline font-semibold text-sm">
+                  <div className="text-[#c5a059] text-[10px] uppercase font-bold">EMAIL PRINCIPAL</div>
+                  <a href="mailto:fulamaantoine@gmail.com" className="text-[#f4f1ea] hover:underline font-serif text-base font-semibold">
                     fulamaantoine@gmail.com
                   </a>
                 </div>
               </div>
 
-              <div className="p-4 rounded bg-[#141416] border border-[#27272A] flex items-center gap-3">
-                <div className="p-2 rounded bg-[#09090B] border border-[#27272A] text-[#EDEDED]">
-                  <Phone className="w-4 h-4" />
+              <div className="p-5 rounded-sm bg-[#12141c] border border-[#c5a059]/30 flex items-center gap-4">
+                <div className="p-3 rounded-sm bg-[#0b0c10] border border-[#c5a059]/40 text-[#c5a059]">
+                  <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[#A1A1AA] text-[10px] uppercase">TÉLÉPHONES & WHATSAPP</div>
-                  <div className="text-[#EDEDED] font-semibold text-xs space-y-0.5">
+                  <div className="text-[#c5a059] text-[10px] uppercase font-bold">TÉLÉPHONES & WHATSAPP</div>
+                  <div className="text-[#f4f1ea] font-mono text-xs space-y-1 font-semibold mt-0.5">
                     <div>+243 852 382 067</div>
                     <div>+243 890 772 161</div>
                   </div>
                 </div>
               </div>
 
-              <div className="p-4 rounded bg-[#141416] border border-[#27272A] flex items-center gap-3">
-                <div className="p-2 rounded bg-[#09090B] border border-[#27272A] text-[#EDEDED]">
-                  <MapPin className="w-4 h-4" />
+              <div className="p-5 rounded-sm bg-[#12141c] border border-[#c5a059]/30 flex items-center gap-4">
+                <div className="p-3 rounded-sm bg-[#0b0c10] border border-[#c5a059]/40 text-[#c5a059]">
+                  <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[#A1A1AA] text-[10px] uppercase">LOCALISATION</div>
-                  <div className="text-[#EDEDED] font-semibold text-xs">
+                  <div className="text-[#c5a059] text-[10px] uppercase font-bold">LOCALISATION</div>
+                  <div className="text-[#f4f1ea] font-serif text-sm font-semibold">
                     Kinshasa, République Démocratique du Congo
                   </div>
                 </div>
@@ -123,13 +123,13 @@ export default function ContactForm() {
 
           {/* Form Column */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-8 rounded bg-[#141416] border border-[#27272A]">
-              <h3 className="font-mono text-xs uppercase tracking-wider text-[#EDEDED] font-bold mb-6">
-                FORMULAIRE DE CONTACT PROFESSIONNEL
+            <div className="p-8 rounded-sm bg-[#12141c] border border-[#c5a059]/30 shadow-xl">
+              <h3 className="font-serif font-bold text-base uppercase tracking-wider text-[#f4f1ea] mb-6">
+                FORMULAIRE DE CORRESPONDANCE
               </h3>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                {/* Honeypot field (caché pour piéger les bots) */}
+                {/* Honeypot field */}
                 <div style={{ display: 'none' }}>
                   <label htmlFor="website">Website</label>
                   <input
@@ -145,8 +145,8 @@ export default function ContactForm() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block font-mono text-xs text-[#A1A1AA] mb-1">
-                      Nom complet <span className="text-zinc-400">*</span>
+                    <label htmlFor="name" className="block font-mono text-xs text-[#9ca3af] mb-1">
+                      Nom complet <span className="text-[#c5a059]">*</span>
                     </label>
                     <input
                       type="text"
@@ -156,13 +156,13 @@ export default function ContactForm() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Ir. Jean Dupont"
-                      className="w-full px-3.5 py-2.5 rounded bg-[#09090B] border border-[#27272A] text-[#EDEDED] placeholder-zinc-600 font-mono text-xs focus:outline-none focus:border-zinc-500"
+                      className="w-full px-4 py-3 rounded-sm bg-[#0b0c10] border border-[#c5a059]/30 text-[#f4f1ea] placeholder-zinc-600 font-mono text-xs focus:outline-none focus:border-[#c5a059]"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block font-mono text-xs text-[#A1A1AA] mb-1">
-                      Adresse Email <span className="text-zinc-400">*</span>
+                    <label htmlFor="email" className="block font-mono text-xs text-[#9ca3af] mb-1">
+                      Adresse Email <span className="text-[#c5a059]">*</span>
                     </label>
                     <input
                       type="email"
@@ -172,13 +172,13 @@ export default function ContactForm() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="jean.dupont@entreprise.com"
-                      className="w-full px-3.5 py-2.5 rounded bg-[#09090B] border border-[#27272A] text-[#EDEDED] placeholder-zinc-600 font-mono text-xs focus:outline-none focus:border-zinc-500"
+                      className="w-full px-4 py-3 rounded-sm bg-[#0b0c10] border border-[#c5a059]/30 text-[#f4f1ea] placeholder-zinc-600 font-mono text-xs focus:outline-none focus:border-[#c5a059]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="organization" className="block font-mono text-xs text-[#A1A1AA] mb-1">
+                  <label htmlFor="organization" className="block font-mono text-xs text-[#9ca3af] mb-1">
                     Organisation / Établissement
                   </label>
                   <input
@@ -188,13 +188,13 @@ export default function ContactForm() {
                     value={formData.organization}
                     onChange={handleChange}
                     placeholder="Nom de l'entreprise ou institution"
-                    className="w-full px-3.5 py-2.5 rounded bg-[#09090B] border border-[#27272A] text-[#EDEDED] placeholder-zinc-600 font-mono text-xs focus:outline-none focus:border-zinc-500"
+                    className="w-full px-4 py-3 rounded-sm bg-[#0b0c10] border border-[#c5a059]/30 text-[#f4f1ea] placeholder-zinc-600 font-mono text-xs focus:outline-none focus:border-[#c5a059]"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block font-mono text-xs text-[#A1A1AA] mb-1">
-                    Message <span className="text-zinc-400">*</span>
+                  <label htmlFor="message" className="block font-mono text-xs text-[#9ca3af] mb-1">
+                    Message <span className="text-[#c5a059]">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -204,20 +204,20 @@ export default function ContactForm() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Décrivez votre besoin d'architecture ou de projet..."
-                    className="w-full px-3.5 py-2.5 rounded bg-[#09090B] border border-[#27272A] text-[#EDEDED] placeholder-zinc-600 font-mono text-xs focus:outline-none focus:border-zinc-500"
+                    className="w-full px-4 py-3 rounded-sm bg-[#0b0c10] border border-[#c5a059]/30 text-[#f4f1ea] placeholder-zinc-600 font-mono text-xs focus:outline-none focus:border-[#c5a059]"
                   ></textarea>
                 </div>
 
                 {/* Notifications Status */}
                 {status === 'success' && (
-                  <div className="p-3.5 rounded bg-emerald-950/60 border border-emerald-800 text-emerald-300 font-mono text-xs flex items-center gap-2">
+                  <div className="p-4 rounded-sm bg-emerald-950/80 border border-emerald-800 text-emerald-300 font-mono text-xs flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-400" />
                     <span>Votre message a été transmis avec succès. Merci !</span>
                   </div>
                 )}
 
                 {status === 'error' && (
-                  <div className="p-3.5 rounded bg-rose-950/60 border border-rose-800 text-rose-300 font-mono text-xs flex items-center gap-2">
+                  <div className="p-4 rounded-sm bg-rose-950/80 border border-rose-800 text-rose-300 font-mono text-xs flex items-center gap-2">
                     <AlertCircle className="w-4 h-4 shrink-0 text-rose-400" />
                     <span>{errorMessage}</span>
                   </div>
@@ -226,14 +226,14 @@ export default function ContactForm() {
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="w-full py-3 rounded bg-[#EDEDED] text-[#09090B] font-mono text-xs font-bold hover:bg-white transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="w-full py-3.5 rounded-sm bg-[#c5a059] text-[#0b0c10] font-serif font-bold text-sm hover:bg-[#e2c27b] transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2 shadow-lg"
                 >
                   {status === 'loading' ? (
-                    <span>ENVOI EN COURS...</span>
+                    <span>TRANSMISSION EN COURS...</span>
                   ) : (
                     <>
                       <span>TRANSMETTRE LE MESSAGE</span>
-                      <Send className="w-3.5 h-3.5" />
+                      <Send className="w-4 h-4" />
                     </>
                   )}
                 </button>
@@ -248,4 +248,3 @@ export default function ContactForm() {
     </section>
   );
 }
-

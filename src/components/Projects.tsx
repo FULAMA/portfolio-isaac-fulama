@@ -1,22 +1,24 @@
 import React from 'react';
 import projectsData from '@/data/projects.json';
-import { ExternalLink, Github, Sparkles, FolderGit2 } from 'lucide-react';
+import { ExternalLink, Github, Award } from 'lucide-react';
 
 export default function Projects() {
   return (
-    <section id="projets" className="py-20 border-b border-[#27272A] bg-[#09090B]">
+    <section id="projets" className="py-24 border-b border-[#c5a059]/20 bg-[#0b0c10]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
           <div>
-            <div className="font-mono text-xs text-[#A1A1AA] uppercase tracking-wider mb-2">03 // RÉALISATIONS</div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#EDEDED] tracking-tight">
-              Projets Réels & Application Système
+            <div className="font-mono text-xs text-[#c5a059] uppercase tracking-widest mb-2 font-semibold">
+              III // TRAVAUX & RÉALISATIONS DE RANG MAJEUR
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#f4f1ea] tracking-tight">
+              Projets Système & Code-base Vérifiables
             </h2>
           </div>
-          <div className="font-mono text-xs text-[#A1A1AA]">
-            Système de gestion basé sur <code className="text-[#EDEDED] bg-[#141416] px-1.5 py-0.5 rounded border border-[#27272A]">projects.json</code>
+          <div className="font-mono text-xs text-[#9ca3af]">
+            Registre configuré via <code className="text-[#c5a059] bg-[#12141c] px-2 py-1 rounded-sm border border-[#c5a059]/30">projects.json</code>
           </div>
         </div>
 
@@ -25,46 +27,46 @@ export default function Projects() {
           {projectsData.map((project) => (
             <div
               key={project.id}
-              className={`p-6 sm:p-7 rounded bg-[#141416] border transition-all flex flex-col justify-between ${
+              className={`p-7 sm:p-8 rounded-sm bg-[#12141c] border transition-all duration-300 flex flex-col justify-between ${
                 project.featured
-                  ? 'border-zinc-500 shadow-lg'
-                  : 'border-[#27272A] hover:border-[#3f3f46]'
+                  ? 'border-[#c5a059] shadow-xl'
+                  : 'border-[#c5a059]/30 hover:border-[#c5a059]'
               }`}
             >
               <div>
                 {/* Header Category & Status Badge */}
                 <div className="flex items-center justify-between gap-2 mb-4 font-mono text-xs">
-                  <span className="px-2.5 py-1 rounded bg-[#09090B] border border-[#27272A] text-[#A1A1AA]">
+                  <span className="px-3 py-1 rounded-sm bg-[#0b0c10] border border-[#c5a059]/30 text-[#9ca3af]">
                     {project.category}
                   </span>
                   {project.featured && (
-                    <span className="px-2.5 py-1 rounded bg-[#EDEDED] text-[#09090B] font-bold flex items-center gap-1">
-                      <Sparkles className="w-3 h-3 text-zinc-900" /> PROJET PHARE
+                    <span className="px-3 py-1 rounded-sm bg-[#c5a059] text-[#0b0c10] font-serif font-bold text-xs flex items-center gap-1.5 shadow-sm">
+                      <Award className="w-3.5 h-3.5 text-[#0b0c10]" /> PROJET PHARE
                     </span>
                   )}
                 </div>
 
                 {/* Title & Subtitle */}
-                <h3 className="text-xl font-bold text-[#EDEDED] mb-1">
+                <h3 className="text-2xl font-serif font-bold text-[#f4f1ea] mb-1">
                   {project.title}
                 </h3>
-                <p className="font-mono text-xs text-zinc-400 mb-4">
+                <p className="font-mono text-xs text-[#c5a059] mb-4">
                   {project.subtitle}
                 </p>
 
                 {/* Description */}
-                <p className="text-sm text-[#A1A1AA] leading-relaxed mb-6">
+                <p className="text-sm text-[#9ca3af] leading-relaxed mb-6">
                   {project.description}
                 </p>
               </div>
 
               <div>
                 {/* Stack Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-6 font-mono text-[11px]">
+                <div className="flex flex-wrap gap-2 mb-6 font-mono text-[11px]">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-0.5 rounded bg-[#09090B] border border-[#27272A] text-zinc-300"
+                      className="px-2.5 py-1 rounded-sm bg-[#0b0c10] border border-[#c5a059]/20 text-[#f4f1ea]"
                     >
                       {tech}
                     </span>
@@ -72,16 +74,16 @@ export default function Projects() {
                 </div>
 
                 {/* Footer Links & Status */}
-                <div className="pt-4 border-t border-[#27272A] flex items-center justify-between font-mono text-xs">
-                  <span className="text-zinc-400 text-[11px] truncate max-w-[200px]" title={project.status.label}>
+                <div className="pt-4 border-t border-[#c5a059]/20 flex items-center justify-between font-mono text-xs">
+                  <span className="text-[#9ca3af] text-[11px] truncate max-w-[200px]" title={project.status.label}>
                     ● {project.status.phase}
                   </span>
 
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-4">
                     {project.id === 'edunova' && (
                       <a
                         href="#edunova"
-                        className="text-[#EDEDED] underline hover:text-white transition-colors"
+                        className="text-[#c5a059] font-serif font-bold underline hover:text-[#e2c27b] transition-colors"
                       >
                         Étude de cas →
                       </a>
@@ -91,10 +93,10 @@ export default function Projects() {
                         href={project.links.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-[#A1A1AA] hover:text-[#EDEDED] transition-colors"
+                        className="inline-flex items-center gap-1.5 text-[#9ca3af] hover:text-[#c5a059] transition-colors"
                       >
                         <Github className="w-3.5 h-3.5" />
-                        <span>Code</span>
+                        <span>Code Dépôt</span>
                       </a>
                     )}
                   </div>
@@ -108,4 +110,3 @@ export default function Projects() {
     </section>
   );
 }
-
