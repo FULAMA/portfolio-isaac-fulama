@@ -9,27 +9,27 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#0b0c10',
+        background: '#07080c',
         surface: {
-          DEFAULT: '#12141c',
-          card: '#161924',
-          accent: '#1c1f2e',
-        },
-        gold: {
-          DEFAULT: '#c5a059',
-          light: '#e2c27b',
-          muted: 'rgba(197, 160, 89, 0.25)',
+          DEFAULT: '#11131c',
+          hover: '#161a26',
+          card: '#11131c',
         },
         border: {
-          DEFAULT: 'rgba(197, 160, 89, 0.2)',
-          subtle: '#1f2230',
+          DEFAULT: '#1e2234',
+          subtle: '#171a28',
         },
-        foreground: '#f4f1ea',
+        brand: {
+          green: '#10b981',
+          greenLight: '#34d399',
+          purple: '#8b5cf6',
+          blue: '#3b82f6',
+        },
+        foreground: '#f3f4f6',
         muted: '#9ca3af',
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
     },

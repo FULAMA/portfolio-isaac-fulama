@@ -58,16 +58,16 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-24 border-b border-[#c5a059]/20 bg-[#0b0c10]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 border-b border-[#1e2234] bg-[#07080c]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="mb-14">
-          <div className="font-mono text-xs text-[#c5a059] uppercase tracking-widest mb-2 font-semibold">
-            V // PRISE DE CONTACT & CORRESPONDANCE
+          <div className="font-mono text-xs text-[#10b981] uppercase tracking-widest mb-2 font-bold">
+            05 // PRISE DE CONTACT & CORRESPONDANCE
           </div>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#f4f1ea] tracking-tight">
-            Canaux Directs & Correspondance
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Canaux Directs & Message
           </h2>
         </div>
 
@@ -76,43 +76,43 @@ export default function ContactForm() {
           {/* Direct Channels Column */}
           <div className="lg:col-span-5 space-y-6">
             <p className="text-base text-[#9ca3af] leading-relaxed">
-              Pour toute opportunité d'architecture système, de mission de conseil en ingénierie logicielle ou d'intégration SaaS B2B, vous pouvez me joindre directement via les coordonnées ci-dessous :
+              Pour toute opportunité d'architecture système, de mission de conseil en ingénierie logicielle ou d'intégration SaaS B2B, vous pouvez me joindre directement :
             </p>
 
             <div className="space-y-4 font-mono text-xs">
               
-              <div className="p-5 rounded-sm bg-[#12141c] border border-[#c5a059]/30 flex items-center gap-4">
-                <div className="p-3 rounded-sm bg-[#0b0c10] border border-[#c5a059]/40 text-[#c5a059]">
+              <div className="p-5 rounded-2xl bg-[#11131c] border border-[#1e2234] flex items-center gap-4 hover:border-[#10b981]/50 transition-colors">
+                <div className="p-3.5 rounded-xl bg-[#07080c] border border-[#10b981]/30 text-[#10b981]">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[#c5a059] text-[10px] uppercase font-bold">EMAIL PRINCIPAL</div>
-                  <a href="mailto:fulamaantoine@gmail.com" className="text-[#f4f1ea] hover:underline font-serif text-base font-semibold">
+                  <div className="text-[#10b981] text-[10px] uppercase font-bold">EMAIL PRINCIPAL</div>
+                  <a href="mailto:fulamaantoine@gmail.com" className="text-white hover:underline font-sans text-base font-semibold">
                     fulamaantoine@gmail.com
                   </a>
                 </div>
               </div>
 
-              <div className="p-5 rounded-sm bg-[#12141c] border border-[#c5a059]/30 flex items-center gap-4">
-                <div className="p-3 rounded-sm bg-[#0b0c10] border border-[#c5a059]/40 text-[#c5a059]">
+              <div className="p-5 rounded-2xl bg-[#11131c] border border-[#1e2234] flex items-center gap-4 hover:border-[#10b981]/50 transition-colors">
+                <div className="p-3.5 rounded-xl bg-[#07080c] border border-[#10b981]/30 text-[#10b981]">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[#c5a059] text-[10px] uppercase font-bold">TÉLÉPHONES & WHATSAPP</div>
-                  <div className="text-[#f4f1ea] font-mono text-xs space-y-1 font-semibold mt-0.5">
+                  <div className="text-[#10b981] text-[10px] uppercase font-bold">TÉLÉPHONES & WHATSAPP</div>
+                  <div className="text-white font-mono text-xs space-y-1 font-semibold mt-0.5">
                     <div>+243 852 382 067</div>
                     <div>+243 890 772 161</div>
                   </div>
                 </div>
               </div>
 
-              <div className="p-5 rounded-sm bg-[#12141c] border border-[#c5a059]/30 flex items-center gap-4">
-                <div className="p-3 rounded-sm bg-[#0b0c10] border border-[#c5a059]/40 text-[#c5a059]">
+              <div className="p-5 rounded-2xl bg-[#11131c] border border-[#1e2234] flex items-center gap-4 hover:border-[#10b981]/50 transition-colors">
+                <div className="p-3.5 rounded-xl bg-[#07080c] border border-[#10b981]/30 text-[#10b981]">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[#c5a059] text-[10px] uppercase font-bold">LOCALISATION</div>
-                  <div className="text-[#f4f1ea] font-serif text-sm font-semibold">
+                  <div className="text-[#10b981] text-[10px] uppercase font-bold">LOCALISATION</div>
+                  <div className="text-white font-sans text-sm font-semibold">
                     Kinshasa, République Démocratique du Congo
                   </div>
                 </div>
@@ -123,9 +123,9 @@ export default function ContactForm() {
 
           {/* Form Column */}
           <div className="lg:col-span-7">
-            <div className="p-8 rounded-sm bg-[#12141c] border border-[#c5a059]/30 shadow-xl">
-              <h3 className="font-serif font-bold text-base uppercase tracking-wider text-[#f4f1ea] mb-6">
-                FORMULAIRE DE CORRESPONDANCE
+            <div className="p-8 rounded-2xl bg-[#11131c] border border-[#1e2234] shadow-2xl">
+              <h3 className="font-mono font-bold text-xs uppercase tracking-wider text-[#10b981] mb-6">
+                FORMULAIRE DE CONTACT
               </h3>
 
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -146,7 +146,7 @@ export default function ContactForm() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block font-mono text-xs text-[#9ca3af] mb-1">
-                      Nom complet <span className="text-[#c5a059]">*</span>
+                      Nom complet <span className="text-[#10b981]">*</span>
                     </label>
                     <input
                       type="text"
@@ -156,13 +156,13 @@ export default function ContactForm() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Ir. Jean Dupont"
-                      className="w-full px-4 py-3 rounded-sm bg-[#0b0c10] border border-[#c5a059]/30 text-[#f4f1ea] placeholder-zinc-600 font-mono text-xs focus:outline-none focus:border-[#c5a059]"
+                      className="w-full px-4 py-3 rounded-xl bg-[#07080c] border border-[#1e2234] text-white placeholder-zinc-600 font-mono text-xs focus:outline-none focus:border-[#10b981]"
                     />
                   </div>
 
                   <div>
                     <label htmlFor="email" className="block font-mono text-xs text-[#9ca3af] mb-1">
-                      Adresse Email <span className="text-[#c5a059]">*</span>
+                      Adresse Email <span className="text-[#10b981]">*</span>
                     </label>
                     <input
                       type="email"
@@ -172,7 +172,7 @@ export default function ContactForm() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="jean.dupont@entreprise.com"
-                      className="w-full px-4 py-3 rounded-sm bg-[#0b0c10] border border-[#c5a059]/30 text-[#f4f1ea] placeholder-zinc-600 font-mono text-xs focus:outline-none focus:border-[#c5a059]"
+                      className="w-full px-4 py-3 rounded-xl bg-[#07080c] border border-[#1e2234] text-white placeholder-zinc-600 font-mono text-xs focus:outline-none focus:border-[#10b981]"
                     />
                   </div>
                 </div>
@@ -188,13 +188,13 @@ export default function ContactForm() {
                     value={formData.organization}
                     onChange={handleChange}
                     placeholder="Nom de l'entreprise ou institution"
-                    className="w-full px-4 py-3 rounded-sm bg-[#0b0c10] border border-[#c5a059]/30 text-[#f4f1ea] placeholder-zinc-600 font-mono text-xs focus:outline-none focus:border-[#c5a059]"
+                    className="w-full px-4 py-3 rounded-xl bg-[#07080c] border border-[#1e2234] text-white placeholder-zinc-600 font-mono text-xs focus:outline-none focus:border-[#10b981]"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block font-mono text-xs text-[#9ca3af] mb-1">
-                    Message <span className="text-[#c5a059]">*</span>
+                    Message <span className="text-[#10b981]">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -204,20 +204,20 @@ export default function ContactForm() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Décrivez votre besoin d'architecture ou de projet..."
-                    className="w-full px-4 py-3 rounded-sm bg-[#0b0c10] border border-[#c5a059]/30 text-[#f4f1ea] placeholder-zinc-600 font-mono text-xs focus:outline-none focus:border-[#c5a059]"
+                    className="w-full px-4 py-3 rounded-xl bg-[#07080c] border border-[#1e2234] text-white placeholder-zinc-600 font-mono text-xs focus:outline-none focus:border-[#10b981]"
                   ></textarea>
                 </div>
 
                 {/* Notifications Status */}
                 {status === 'success' && (
-                  <div className="p-4 rounded-sm bg-emerald-950/80 border border-emerald-800 text-emerald-300 font-mono text-xs flex items-center gap-2">
+                  <div className="p-4 rounded-xl bg-emerald-950/80 border border-emerald-800 text-emerald-300 font-mono text-xs flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-400" />
                     <span>Votre message a été transmis avec succès. Merci !</span>
                   </div>
                 )}
 
                 {status === 'error' && (
-                  <div className="p-4 rounded-sm bg-rose-950/80 border border-rose-800 text-rose-300 font-mono text-xs flex items-center gap-2">
+                  <div className="p-4 rounded-xl bg-rose-950/80 border border-rose-800 text-rose-300 font-mono text-xs flex items-center gap-2">
                     <AlertCircle className="w-4 h-4 shrink-0 text-rose-400" />
                     <span>{errorMessage}</span>
                   </div>
@@ -226,7 +226,7 @@ export default function ContactForm() {
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="w-full py-3.5 rounded-sm bg-[#c5a059] text-[#0b0c10] font-serif font-bold text-sm hover:bg-[#e2c27b] transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2 shadow-lg"
+                  className="w-full py-3.5 rounded-xl bg-[#10b981] text-[#07080c] font-bold text-sm hover:bg-[#34d399] transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2 shadow-xl shadow-emerald-950/50"
                 >
                   {status === 'loading' ? (
                     <span>TRANSMISSION EN COURS...</span>
