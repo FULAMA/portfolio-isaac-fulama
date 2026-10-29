@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Ir. Isaac FULAMA MATONDO | Architecte Logiciel & Full-Stack',
     description: "Je conçois des architectures logiciels robustes et adaptées aux contraintes du terrain.",
-    url: 'https://github.com/FULAMA/portfolio-isaac-fulama',
     siteName: 'Portfolio Ir. Isaac FULAMA MATONDO',
     locale: 'fr_FR',
     type: 'website',
