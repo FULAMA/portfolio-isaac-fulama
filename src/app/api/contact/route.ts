@@ -34,7 +34,41 @@ export async function POST(request: Request) {
 
   let body: unknown;
   try {
-    body = await request.json();
+    const reader = request.body?.getReader();
+    if (!reader) {
+      return NextResponse.json(
+        { success: false, message: 'Le corps de la requête est vide.' },
+        { status: 400 },
+      );
+    }
+
+    const chunks: Uint8Array[] = [];
+    let totalBytes = 0;
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+
+      totalBytes += value.byteLength;
+      if (totalBytes > MAX_BODY_BYTES) {
+        await reader.cancel();
+        return NextResponse.json(
+          { success: false, message: 'Le message est trop volumineux.' },
+          { status: 413 },
+        );
+      }
+
+      chunks.push(value);
+    }
+
+    const payload = new Uint8Array(totalBytes);
+    let offset = 0;
+    for (const chunk of chunks) {
+      payload.set(chunk, offset);
+      offset += chunk.byteLength;
+    }
+
+    body = JSON.parse(new TextDecoder().decode(payload));
   } catch {
     return NextResponse.json(
       { success: false, message: 'Le format de la requête est invalide.' },
